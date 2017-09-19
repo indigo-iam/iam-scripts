@@ -31,6 +31,8 @@ if [[ $? != 0 ]]; then
   exit 1
 fi
 
+echo $result
+
 access_token=$(echo $result | jq -r .access_token)
 
 echo "export IAM_ACCESS_TOKEN=\"${access_token}\"" 
